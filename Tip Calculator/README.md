@@ -10,7 +10,7 @@ Time spent: **1** hours spent in total
 
 The following **required** functionality is complete:
 
-* [ ] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
+* [x] User can enter a bill amount, choose a tip percentage, and see the tip and total values.
 
 The following **optional** features are implemented:
 * [ ] Settings page to change the default tip percentage.
@@ -23,22 +23,15 @@ The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
 
--[x]Party size option to divide tip between multiple people and give amount per person
+-[ ]Party size option to divide tip between multiple people and give amount per person
 
-## Video Walkthrough
-
-Here's a walkthrough of implemented user stories:
-
--Embed link to gif below 
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
+https://imgur.com/a/2OiRzsd
 ## Notes
 
 
 ## License
 
-Copyright [Year] [Your name]
+Copyright [2019] [Enrique Mosqueda]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
