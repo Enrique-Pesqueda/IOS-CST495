@@ -26,6 +26,7 @@ The following **additional** features are implemented:
 -[ ]Party size option to divide tip between multiple people and give amount per person
 
 GIF : https://imgur.com/a/2OiRzsd
+<img src = "x" >
 ## Notes
 
 
