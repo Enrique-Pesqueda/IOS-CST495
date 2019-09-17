@@ -30,7 +30,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Video Walkthrough
 
-<img src='X' title='Video Walkthrough' width='' alt='Video Walkthrough'/>
+<img src='Tumblr.gif' title='Video Walkthrough' width='' alt='Video Walkthrough'/>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
