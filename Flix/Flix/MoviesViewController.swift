@@ -18,7 +18,6 @@ class MoviesViewController: UIViewController , UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -36,7 +35,6 @@ class MoviesViewController: UIViewController , UITableViewDataSource, UITableVie
                 self.movies = dataDictionary["results"] as! [[String:Any]]
                 
                 self.tableView.reloadData()
-                print(dataDictionary);
             }
         }
         task.resume()
@@ -47,8 +45,8 @@ class MoviesViewController: UIViewController , UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell") as! MovieCell
         let movie = movies[indexPath.row]
         let title = movie["title"] as! String
         let synopsis = movie["overview"] as! String
@@ -58,18 +56,31 @@ class MoviesViewController: UIViewController , UITableViewDataSource, UITableVie
         
         let baseUrl = "https://image.tmdb.org/t/p/w185"
         let posterPath = movie["poster_path"] as! String
-        let posterUrl = URL(string: baseUrl + posterPath)
+        let posterUrl = URL(string: baseUrl + posterPath)!
         
-        cell.posterView.af_setImage(withURL: posterUrl!)
+        cell.posterView.af_setImage(withURL: posterUrl)
         
         
         return cell
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+
+        let movie = movies[indexPath.row]
+
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+
+        detailsViewController.movie = movie
+        tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+//    }
 
 
 }

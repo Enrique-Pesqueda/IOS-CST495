@@ -462,7 +462,7 @@ open class ImageDownloader {
             #if swift(>=4.2)
             let index = responseHandler.operations.firstIndex { $0.receiptID == requestReceipt.receiptID }
             #else
-            let index = responseHandler.operations.index { $0.receiptID == requestReceipt.receiptID }
+            let index = responseHandler.operations.firstIndex { $0.receiptID == requestReceipt.receiptID }
             #endif
             
             if let index = index {
