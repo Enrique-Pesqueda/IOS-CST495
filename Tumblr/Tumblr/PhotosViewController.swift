@@ -66,14 +66,14 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let post = posts[indexPath.row]
+        let vc = segue.destination as! PhotoDetailsViewController
+        vc.post = post
+        tableView.deselectRow(at: indexPath, animated: true)
+
     }
-    */
 
 }
